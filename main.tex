@@ -1,0 +1,148 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {C:/Users/utente/Desktop/misc/} }
+\usepackage[english]{babel}
+
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+\usepackage{soul}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amsthm}
+\usepackage{bm,amsmath}
+\usepackage {tikz, tikz-cd }
+\usepackage{quiver}
+\usetikzlibrary {positioning, shapes.geometric, arrows, decorations.text}
+\usetikzlibrary { shapes }
+\usetikzlibrary { patterns }
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{bbold}
+\usepackage{stmaryrd}
+\usepackage{amssymb}
+\usepackage{yfonts}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{trimclip,adjustbox}
+
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{1.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{lem*}{Lemma}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{cor*}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Def.}[section]
+\newtheorem{ex}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+
+\newcommand{\VDashA}{%
+	\mathrel{\text{\clipbox{0pt 0pt {.8\width} 0pt}{$\Vdash$}}\mkern.9mu}\vDash
+}
+
+\newcommand{\VDashB}{%
+	\mathrel{
+		\text{\clipbox{0pt 0pt {.8\width} 0pt}{$\Vdash$}}
+		\mkern.9mu
+		\text{\adjustbox{width=.87\width,height=\height}{$\vDash$}}
+	}
+}
+
+
+
+\title{
+	{\includegraphics{unimi.png}} \\
+	\vspace{0.3cm}
+	{\large Dipartimento di Matematica Federigo Enriques}\\
+	\vspace{1cm}
+	{\large \textbf{Tesi di Laurea Magistrale in Matematica }}\\
+	\vspace{1cm}
+		{\emph{Topos semantics for three-valued Gödel-Dummett Logic}}\\
+}
+
+\author{\\ \\ Author: Alberto Panerai \\ 
+	Student ID: 980237 \\ Supervisor: Prof. Stefano Aguzzoli}
+
+\date{26/09/2023}
+
+
+
+ \begin{document}
+ 	\maketitle
+ 	
+ 	${}$ \newpage
+ 	\chapter*{Abstract}
+ 	This work builds upon Professor S.Aguzzoli \& P.Codara's paper \cite{towards}. \newline
+ 	Its primary aim is to explore the topos semantics of a particular fragment of super-intuitionistic and fuzzy logic namely \emph{three-valued Gödel-Dummett Logic} $\mathcal{G}_3$. 
+ 	The dual-algebraic semantics of $\mathcal{G}_3$ is given by the sub-category of \emph{finite forests} of height at most two $\mathbb{FF}_2$, a.k.a. \emph{bushes}. Building upon the topos-semantics of \emph{bushes} at the propositional layer, we arrive through a new path at first-order topos semantics for $\mathcal{G}_3$.\newline
+ In chapter 1 we present this logic after a more general introduction of intuitionistic logic and its principal semantics given by Heyting algebras and Kripke frames, which will come up later on. \newline
+ In chapter 2 we give a detailed account of \emph{finite forests} and in particular the sub-category of \emph{bushes}, which forms a topos and is dually equivalent to finite three-valued Gödel algebras.
+Continuing where \cite{towards} left off, we provide a novel counterexample to show why $\mathbb{FF}_k$, i.e., \emph{finite forests} of height at most $k$ with $k$ greater than two, fails to be a topos. An original Python code is also used to aid in these constructions. \newline
+ In chapter 3, following the development outlined in \cite{goldblatt} and giving whenever necessary some generalities of topos semantics, we examine the propositional layer of the topos semantics given by \emph{bushes} and propose some results regarding its internal and external logics. \newline
+ In chapter 4 we follow up from chapter 3 and move on to first order logic. We start by giving an account by \cite{goldblatt} of first order topos models and make some considerations on predicates and modeling three-valued Gödel-Dummett logic before taking an alternative type-theoretic approach to quantifiers due to \cite{lambekscott} and applying it to our topos of bushes. Conclusive remarks are made on this application and the recovery of first order Gödel-Dummett logic. \newline   
+ In chapter 5,  we compare our findings with alternative topos semantics for $\mathcal{G}_3$ given by \emph{variable sets} and \emph{sheaves} and make some new remarks on the matter. \newline
+ The conclusion is a short summary of what has been achieved throughout this work, its justification and a few comments on further areas of research. \newline\newline
+ %CHECK
+ \hl{(Highlighted sections or sub-sections contain the original results made by the author.)
+}
+ 	\chapter*{Dedication}
+ 	To Mum and Dad. \newline
+ 	Without their love and support none of this would be possible.
+ 	\newpage
+ 		${}$ \newpage
+ 	
+ 	\chapter*{Declaration}
+ 	I hereby declare that this thesis represents my own work which has
+ 	been done after registration for the degree of \emph{Laurea Magistrale in Matematica} at \emph{Università degli Studi di Milano}, and has not been
+ 	previously included in a thesis or dissertation submitted to this or any
+ 	other institution for a degree, diploma or other qualifications.
+ 	\newpage
+ 		${}$ \newpage
+ 		
+ 	\chapter*{Acknowledgements}
+ 	I want to thank again my family and anyone who helped me in my mathematical journey. \newline
+ 	Special thanks are due to my thesis advisor Professor S. Aguzzoli who showed me a truly fascinating area of research and has been very supportive throughout this endeavor. \newline
+ 	I also thank Professors V. Marra, S. Ghilardi and N.Gambino for their wonderful lectures and discussions which in no small part helped me in this endeavor.  
+ 		\newpage
+ 	${}$ \newpage
+ 	\tableofcontents
+ 	
+ \chapter{Introduction}
+ \input{chapters/introduction}
+ 
+ \chapter{Algebras and Forests}
+ \input{chapters/chapter02}
+ 
+ \chapter{Topos Semantics I}
+ \input{chapters/chapter03}
+ 
+ \chapter{Topos Semantics II}
+ \input{chapters/chapter04}
+ 
+ \chapter{Topos Semantics III}
+ \input{chapters/chapter05}
+ 
+ \chapter{Conclusive Remarks}
+ \input{chapters/conclusion}
+ 
+% \appendix
+% \chapter{Appendix}
+% \input{chapters/appendix}
+ 	
+ \end{document}

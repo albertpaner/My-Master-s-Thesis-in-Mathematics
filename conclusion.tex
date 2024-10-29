@@ -1,0 +1,152 @@
+
+
+We take stock of what has been achieved in this work:
+\newline
+
+The primary aim was to explore the topos semantics of $\mathcal{G}_3$. This has been done extensively thanks to the dual-algebraic semantics of $\mathcal{G}_3$ given by the sub-category of \emph{finite forests} known as $\mathbb{FF_2}/$\emph{bushes}.\newline
+%check
+In fact, citing \cite{towards}:
+\begin{remark}
+	we have seen that the category of \emph{bushes} represents a sort of \emph{best of both worlds} semantics as it already completely characterizes $\mathcal{G}_3$ at the propositional level through its duality with finite three-valued \emph{Gödel algebras} and at the same time is a \emph{topos} which provides a path to develop first order semantics for $\mathcal{G}_3$ based on \emph{bush}-concepts instead of \emph{sets}.
+\end{remark}
+ 
+ We used the tools of Categorical Logic available in \cite{goldblatt} \& \cite{lambekscott} to arrive at the following results:
+ \newline
+ At the propositional layer we found in \ref{externalandint}:
+ \begin{prop*}
+ 		The topos of \emph{bushes}/$\mathbb{FF_2}$ is bivalent and non-Boolean.
+ 	\end{prop*}
+In other words: \emph{internally} the propositional logic of \emph{bushes} is classical whilst \emph{externally} it is not.\newline
+However, moving on to the first-order predicate level, we remedied this fact and recovered $\mathcal{G}_3$ \emph{internally} in \ref{anotherlook}.\newline
+ 
+ Recall from \ref{intermediate} that:
+ 	First-order semantics for $\mathcal{G}_3$ was defined in the usual way using set-concepts and interpreted the quantifiers $\forall$ and $\exists$ as generalized $\land$ and $\lor$, i.e., in this case $min$ and $max$ of truth-values.	\newline
+What we found in \ref{whataboutquant}, from the perspective of the first-order semantics of \emph{bushes}, is that:
+\emph{universal and existential quantification are equivalent to finite conjunction and disjunction over generalized elements}, i.e.,:
+
+\begin{prop*}
+		The  first-order logic of the topos of $\mathbb{FF_2}$/\emph{bushes} corresponds to first-order three-valued Gödel-Dummett Logic on \emph{finite} domains.
+\end{prop*}
+
+\begin{remark}
+	This justifies our approach building up from the propositional to the first order layer of topos-semantics of \emph{bushes} as it \emph{recovers} the first-order set-based semantics for $\mathcal{G}_3$ defined in \ref{intermediate}.
+\end{remark}
+	 
+In chapter 5,  we compared our findings with alternative (propositional) topos-semantics for $\mathcal{G}_3$ given by \emph{variable sets} and \emph{sheaves on locales} found in \cite{goldblatt} and \cite{lisboa}. \newline
+We reviewed the fact that \emph{$\mathcal{G}$ is the logic of sets through time} $\mathbb{Set}^\textbf{$\omega$}$ and observed the following corollary for \emph{bushes} linking  topos $ \models_{\mathcal{E}}$, Kripke $ \models_{K.}$ and Heyting algebra $\models_{H.A.}$ semantics:
+\begin{cor*}
+	\begin{equation*}
+		\mathcal{G}_3 \vdash \phi\; \text{ iff } \; C_{3} \models_{H.A.} \phi \; \text{ iff } \; \textbf{2} \models_{K.} \phi
+		\; \text{ iff } \; \mathbb{Set}^\textbf{2} \models_{\mathcal{E}} \phi.
+	\end{equation*}
+\end{cor*}
+A topos semantics for $\mathcal{G}_3$ is thus given by $\mathbb{Set}^\textbf{2}$, i.e., the category of \emph{functions between sets}. \newline
+With regards to \emph{sheaves on locales}, we proposed the following:\newline
+The 3-chain $C_3$ in a topological context can be thought of as the locale of open subsets of the \emph{Sierpinski Space}.\newline
+This gives us the following characterization inspired by  \cite{elephant}  which links Sheaves over the Sierpinski space $\textbf{Sh}(\mathcal{S})$, a.k.a. the \emph{Sierpinski topos}, to the category of presheaves over \textbf{2} or $\textbf{PSh}(\textbf{2})$, which in turns is equivalent to the category of \emph{functions between sets}.
+\begin{gather*}
+	\textbf{Sh}(\mathcal{S}) \simeq \textbf{PSh}(\textbf{2}) \simeq \mathbb{Set}^{\textbf{2}}. \\
+	\mathcal{G}_{3} \vdash \phi \;\text{ iff }\;\mathbf{Sh}(\mathcal{S}) \models_{\mathcal{E}} \phi.
+\end{gather*}
+In other words:   
+\begin{prop}
+	$\mathcal{G}_3$  is the logic of the Sierpinski topos.
+\end{prop}
+
+What is the link between \emph{variable sets} and \emph{finite forests}?\newline\newline
+It is the case, as we saw in \ref{forestsvar},  that for any $N>0$ objects and arrows in $\mathbb{Set}_{fin}^{\textbf{N}}$ can be easily translated into objects and arrows in $\mathbb{FF_N}$.\newline
+However, the converse translation breaks down for arbitrary arrows in $\mathbb{FF}_*$.\newline
+In fact back in \ref{chapter02} we introduced the categorical structure of \emph{finite forests} and, as it turns out, though strikingly similar, is remarkably different from that of \emph{variable sets}:
+For $N>1$:
+\begin{remark}
+	The most relevant distinction for our concerns is that: $\mathbb{Set}^\textbf{N}$ is a topos for all $N$, while $\mathbb{FF}_N$, as we have proven through the lengthy counterexample in \ref{counterex},  is a topos only for $N \leq 2$.
+\end{remark}
+
+Recall also the observation made in \ref{forestsvar}: 
+
+\begin{remark}
+	In a nutshell, for $N > 1$, there are \emph{more} arrows in $\mathbb{FF}_N$ than in $\mathbb{Set}^\textbf{N}$.	
+\end{remark}
+
+This gives a new insight for the phrase \emph{"best of both worlds"} used to describe the category of \emph{bushes}:
+
+\begin{remark}
+	$\mathbb{FF_2}$/\emph{bushes} has a \emph{richer arrow structure} than its \emph{variable set}/\emph{presheaf} counterpart $\mathbb{Set}^{\textbf{2}}$ and, unlike all the other finite forests of greater height, has a topos structure.
+\end{remark}
+
+We conclude with a short selection of proposals for
+further areas of inquiry:
+\begin{itemize}
+	\item A semantic approach using \emph{Lawvere Theories} for Gödel-Dummett Logic and other fuzzy logics like \emph{Nilpotent-Minimum Logic} $\mathcal{NM}$.
+	\item A deeper categorical understanding of the \emph{non-toposness} of $\mathbb{FF_{k\geq3}}$.
+	\item An improvement and expansion of the Python code used.
+	\item Ind/Pro-finite completion of \emph{bushes} and associated topos semantics.
+\end{itemize}
+
+The link to the Python implementation of the tool used for computing operations between finite forests and the number of arrows between them in chapter 2 is given:\newline\newline \textbf{https://github.com/albertpaner/finiteforest.git}
+
+	\newpage
+${}$ \newpage
+
+\begin{thebibliography}{30}
+	\bibitem{towards}
+	\emph{S. Aguzzoli and P. Codara}, \textbf{Towards an Algebraic Topos Semantics for Three-valued Gödel Logic} 2021 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), Luxembourg, 2021, pp. 1-6.
+	
+	\bibitem{fuzzy}
+	\emph{Cintula P., Hájek P., Noguera C.} (2011).\textbf{ Handbook of Mathematical Fuzzy Logic} - volume 2. London : College Publications.
+	
+	\bibitem{metamath}
+	\emph{Hájek, Petr} (1998). \textbf{Metamathematics of Fuzzy Logic}. Dordrecht, Boston and London: Kluwer Academic Publishers.
+	
+	\bibitem{firstorder}
+	\emph{Baaz, Matthias et al.} \textbf{First-order Gödel logics.} Ann. Pure Appl. Log. 147 (2006): 23-47.
+	
+	\bibitem{manyval}
+	\emph{S.Aguzzoli, P. Codara \& V.Marra.} \textbf{Gödel-Dummett logic, the category of forests and topoi} 
+	ManyVal 2019 Department of C.S. University of Bucharest.
+	
+	\bibitem{recursive}
+	\emph{S. Aguzzoli and P. Codara}, \textbf{Recursive formulas to compute coproducts of finite Gödel algebras and related structures} 2016 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), Vancouver, BC, Canada, 2016, pp. 201-208.
+	
+	\bibitem{computing}
+	\emph{D’Antona, Ottavio M. \& Marra, Vincenzo} (2006). \textbf{Computing coproducts of finitely presented Gödel algebras}. Annals of Pure and Applied Logic 142 (1):202-211.
+	
+	\bibitem{stone}
+	\emph{Stone, M.H.} \textbf{The theory of representation of Boolean algebras.} Trans. Amer. Math Soc. 40, 1936.
+	
+	\bibitem{goldblatt}
+	\emph{Goldblatt, R. I.} (1982). \textbf{Topoi: The Categorial Analysis of Logic}. British Journal for the Philosophy of Science 33 (1):95-97.
+	
+	\bibitem{awodey}
+	\emph{Awodey, Steve} (2006). \textbf{Category Theory}. Oxford, England: Oxford University Press.
+	
+	\bibitem{godel}
+	\emph{Solomon Feferman, John W. Dawson, Stephen C. Kleene, Gregory H. Moore, Robert M. Solovay, and Jean van Heijenoort} (Eds.). 1986. \textbf{Kurt Godel: collected works. Vol. 1: Publications 1929-1936}. Oxford University Press, Inc., USA.
+	
+	
+	\bibitem{lambekscott}
+	\emph{Lambek, J. \& Scott, P. J.} (1989). \textbf{Introduction to Higher Order Categorical Logic}. Journal of Symbolic Logic.
+	
+	\bibitem{borceaux}
+	\emph{Borceux, F.} (1994). \textbf{Handbook of Categorical Algebra 3: Categories of Sheaves} (Encyclopedia of Mathematics and its Applications). Cambridge: Cambridge University Press.
+	
+	\bibitem{lisboa}
+	\emph{Pedro Filipe.} \textbf{A topoi characterization of Gödel intermediate logics.} Master’s
+	thesis, Instituto Superior Técnico, 2017
+	
+	\bibitem{elephant}
+	\emph{Johnstone, Peter T.} (2002). \textbf{Sketches of an Elephant: A Topos Theory Compendium}, Volume 1. Oxford, England: Clarendon Press.
+	
+	\bibitem{heyting}
+	\emph{A. Heyting} (1930), \textbf{Die Formalen Regeln der intuitionistischen Logik} Sitzungsberichte der Preussischen Akademie von Wissenschaften. Physikalisch Mathematische Klasse 42–56. A.
+	
+	\bibitem{maclane}
+	\emph{MacLane, S.} (1971). \textbf{Categories for the Working Mathematician}. New York: Springer-Verlag.
+	
+	\bibitem{mtl}
+	\emph{Esteva, Francesc \& Godo, Lluis.} (2001) \textbf{Monoidal t-norm Based Logic: Towards a Logic for Left-continuous t-norms}. Fuzzy Sets and Systems. Published by Elsevier BV. 
+	
+	
+\end{thebibliography}
+
+
